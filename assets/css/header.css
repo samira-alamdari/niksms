@@ -1,0 +1,215 @@
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: calc(var(--spaceX) *.75);
+    padding-left: calc(var(--spaceX) *.75);
+    height: var(--headerHeight);
+    z-index: 100;
+    position: relative;
+    background-color: var(--white);
+}
+header:before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 6rem);
+    height: .5rem;
+    background: linear-gradient(
+  to left,
+  #21CCEE 0%,
+  #1B77FF 33%,
+  #F7931A 66%,
+  #EA4335 100%
+);
+    left: 3rem;
+    top: -.5rem;
+    border-radius: .5rem .5rem 0 0;
+}
+.mobileMenuIcon {
+    display: none;
+}
+ .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+header .logo img {
+    width: 3rem;
+    height: 3rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+header .buttons {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+ .nav ul li {
+    position: relative;
+}
+
+ .nav ul li:not(:last-child):after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: calc(-1.25rem - .25rem);
+    transform: translateY(-50%);
+    background-image: url('../image/smoothray.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: .5rem;
+    height: .5rem;
+}
+ .nav ul a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--gray);
+    /* padding: .25rem; */
+    border-radius: 1.5rem;
+}
+ .nav ul a i {
+    font-size: 1rem;
+}
+.nav ul a:hover , .nav ul a.active{
+    color: var(--dark);
+    background-color: var(--neutral);
+    font-weight: 600;
+    padding: .25rem .5rem;
+    border: 1px solid var(--border);
+}
+ .nav ul i {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0;
+    width: 0;
+    transform-origin:right;
+    transition: all ease-in-out .5s;
+}
+
+ .nav ul a:hover i , .nav ul a.active i{
+    width: 1rem;
+    opacity: 1;
+}
+
+header .buttons a.register {
+    background-color: var(--primary);
+    border-radius: .5rem;
+    border: 1px solid rgba(var(--primary-rgb), 0.4);
+}
+/* ==========================================RESPONSIVE============================== */
+@media only screen and (max-width: 768px) {
+    header{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        height: var(--headerHeight);
+        border-bottom: 1px solid var(--border);
+    }
+    .nav {
+        position: fixed;
+        /* display: none; */
+        width: 100%;
+        height: calc(100vh -  var(--headerHeight) - .5rem);
+        top: calc(var(--headerHeight) + .5rem);
+        z-index: 102;
+        right: 0;
+        background-color: var(--white);
+        padding: 1.25rem;
+        transition: all 
+ease-in-out .35s;
+        transform: translateX(100%);
+    }
+    .opMenu .nav {
+        transform: translateX(0);
+    }
+ 
+    .mobileMenuIcon {
+        border: 1px solid var(--border);
+        padding: .25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .5rem;
+        display: block;
+    }
+    
+    .mobileMenuIcon  .box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        justify-content: space-between;
+        padding: .5rem;
+    }
+    
+    .mobileMenuIcon .box span {
+        width: 100%;
+        height: 1px;
+        background-color: var(--dark);
+        transition: all 
+ease-in-out .35s;
+    }
+    
+    .iconLogo {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    header .logo img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+header .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    justify-content: center;
+}
+
+header .nav ul li:not(:last-child):after {
+    content: none;
+}
+header .logo a span {
+    display: none;
+}
+.mobileMenuIcon .box i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    transition: all ease-in-out .35s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opMenu .mobileMenuIcon .box i {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.opMenu .mobileMenuIcon .box span {
+    opacity: 0;
+    pointer-events: none;
+}
+header:before{
+    width: 100%;
+    left: 0;
+    border-radius: 0;
+}
+}
+

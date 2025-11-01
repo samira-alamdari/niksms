@@ -1,0 +1,153 @@
+footer {
+    position: relative;
+    background-color: var(--dark);
+    color: var(--white);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+footer .side:first-child {
+    position: relative;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+footer .logo {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 2rem;
+}
+
+footer .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+footer .des {
+    font-size: .875rem;
+    font-weight: 400;
+    width: 60%;
+    margin: 0 auto 2.5rem;
+    opacity: .5;
+}
+footer .nav ul {
+    justify-content: center;
+}
+
+footer .nav ul a {
+    color: var(--white);
+}
+
+.feature-info:before {}
+
+footer .side:first-child:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    background-image: url(../image/horizontal-line.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: .5rem;
+}
+footer .side:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .copyRight {
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+footer .socialMedia {
+    display: flex;
+    align-items: center;
+}
+
+footer .socialMedia > *:not(:last-child) {
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+footer .socialMedia > *:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--white);
+}
+
+footer .socialMedia > * {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+
+footer:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../image/dots.png');
+    pointer-events: none;
+    z-index: 0;
+    opacity: .1;
+}
+/* =================================RESPONSIVE============================= */
+@media only screen and (max-width: 768px) {
+footer {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+footer .side:first-child {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer .logo {
+    margin: 0 auto 1rem;
+}
+
+footer .des {
+    font-size: .75rem;
+    width: 100%;
+    margin: 0 auto 1.5rem;
+}
+
+footer .nav {
+    position: relative;
+    height: auto;
+    width: fit-content;
+    top: auto;
+    right: auto;
+    background-color: transparent;
+    transform: none;
+    padding: 0;
+}
+
+footer .nav ul {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+footer .side:last-child {
+    flex-direction: column;
+    gap: 1rem;
+}
+}
