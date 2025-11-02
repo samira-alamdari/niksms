@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./assets/css/footer.css" type="text/css" />
     <link rel="stylesheet" href="./assets/css/font.css" type="text/css" />
     <link rel="stylesheet" href="./assets/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/slider.css" type="text/css" />
     <title>nik sms</title>
 </head>
 <body>
@@ -125,6 +126,105 @@
                 <img src="./assets/image/sample/feature-media-02.png" alt="">
             </div>
         </div>
+       </section>
+       <section class="sliderSection paddingX">
+      
+        <div class="header">
+         <div class="text">
+            <div class="header-banner">طرح‌ها راه را برای شما هموار می‌کنند</div>
+            <h2 class="title">طرح‌های قابل سفارشی‌سازی</h1>
+            <p class="des">
+              می‌توانید یکی از طرح‌ها را بر اساس نیازهای خود و تعداد کاربران خود
+              انتخاب کنید تا بهترین نتیجه را بگیرید
+            </p>
+         </div>
+          <div class="header-actions">
+            <div>
+              <button class="question-btn" onclick="handleQuestionClick()">
+                <i class="fas fa-question-circle"></i>
+                سوالی دارم!
+              </button>
+            </div>
+          </div>
+        </div>
+  
+       
+        <div class="slider-section">
+          <h3 class="title">تعداد کاربران فعال پلتفرم شما در حال حاضر چقدر است؟</h2>
+  
+          <div class="slider-container">
+            <div class="slider-track">
+              <div class="slider-fill" id="sliderFill"></div>
+              <input
+                type="range"
+                min="500"
+                max="3000"
+                step="100"
+                value="500"
+                id="userSlider"
+                class="slider-input"
+              />
+            </div>
+  
+            <div class="slider-markers">
+              <div class="slider-marker" id="currentValue">
+                <span id="currentUserCount">۵۰۰ کاربر</span>
+              </div>
+              <div
+                class="slider-marker"
+                onclick="setUserCount(1000)"
+                data-value="1000"
+              >
+                <span>۱۰۰۰ کاربر</span>
+              </div>
+              <div
+                class="slider-marker"
+                onclick="setUserCount(1500)"
+                data-value="1500"
+              >
+                <span>۱۵۰۰ کاربر</span>
+              </div>
+              <div
+                class="slider-marker"
+                onclick="setUserCount(2000)"
+                data-value="2000"
+              >
+                <span>۲۰۰۰ کاربر</span>
+              </div>
+              <div
+                class="slider-marker"
+                onclick="setUserCount(2500)"
+                data-value="2500"
+              >
+                <span>بیش از ۲۰۰۰ کاربر</span>
+              </div>
+            </div>
+          </div>
+  
+          
+        </div>
+  
+         <div class="periodToggle">
+            <p class="current-users" id="currentUsersText">
+                در حال حاضر، پلتفرم ما بیش از ۵۰۰ کاربر فعال دارد!
+              </p>
+              <div class="period-toggle">
+                <button
+                  class="period-btn active"
+                  id="monthlyBtn"
+                  onclick="setPeriod(false)"
+                >
+                  ماهانه
+                </button>
+                <button class="period-btn" id="annualBtn" onclick="setPeriod(true)">
+                  سالانه
+                </button>
+              </div>
+         </div>
+        
+  
+      
+        <div class="pricing-grid" id="pricingGrid"></div>
        </section>
     </main>
     <footer class="paddingX">
